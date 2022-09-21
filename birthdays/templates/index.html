@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post">
+                    <label for="name">Name: </label>
+                    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+                    <label for="month">  Birthday: </label>
+                    <input autocomplete="off" autofocus name="month" placeholder="Month" type="number" min="1" max="12" step="1">
+                    <input autocomplete="off" autofocus name="day" placeholder="Day" type="number" min="1" max="31" step="1">
+                    <input type="submit">
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Month</th>
+                            <th>Day</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for peep in birthdays %}
+                            <tr>
+                                <td>{{ peep["name"] }}</td>
+                                <td>{{ peep["month"] }}</td>
+                                <td>{{ peep["day"] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

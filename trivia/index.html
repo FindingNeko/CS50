@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function sotru() {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').style.color = 'Green';
+                document.getElementById('result').innerHTML = 'Correct!';
+            }
+            function noway() {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').style.color = 'Red';
+                document.getElementById('result').innerHTML = 'Incorrect!';
+            }
+            function clrbt() {
+                document.getElementById('b1').style.backgroundColor = '#d9edff';
+                document.getElementById('b2').style.backgroundColor = '#d9edff';
+                document.getElementById('b3').style.backgroundColor = '#d9edff';
+            }
+            function chkan() {
+                let ans = document.getElementById('ans').value;
+                if (ans.toLowerCase() == 'nothing.' || ans.toLowerCase() == 'nothing') {
+                    document.getElementById('result2').style.display = 'block';
+                    document.getElementById('result2').style.color = 'Red';
+                    document.getElementById('result2').innerHTML = 'Incorrect!';
+                    document.getElementById('ans').style.backgroundColor = 'Red';
+                    return 0;
+                } else if (ans == '') {
+                    document.getElementById('result2').style.display = 'block';
+                    document.getElementById('result2').style.color = 'Red';
+                    document.getElementById('result2').innerHTML = 'Incorrect!';
+                    document.getElementById('ans').style.backgroundColor = 'Red';
+                    return 0;
+                } else {
+                    document.getElementById('result2').style.display = 'block';
+                    document.getElementById('result2').style.color = 'Green';
+                    document.getElementById('result2').innerHTML = 'Correct!';
+                    document.getElementById('ans').style.backgroundColor = 'Green';
+                    return 1;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class='header'>
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class='container'>
+            <div class='section'>
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Are you going to press a button?</h3>
+                <h3 id='result' style='display:none;color:Green;'>Correct!</h3>
+                <button type='button' id='b1' onclick="clrbt(); style='background-color:Green'; sotru();">Yes</button>
+                <button type='button' id='b2' onclick="clrbt(); style='background-color:Red'; noway();">No</button>
+                <button type='button' id='b3' onclick="clrbt(); style='background-color:Red'; noway();">Banana</button>
+            </div>
+
+            <div class='section'>
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What would you do for a Klondike bar?</h3>
+                <h3 id='result2' style='display:none'>Correct<h3>
+                <input autocomplete='off' type='text' id='ans'>
+                <button type='button' onclick='chkan()'>Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

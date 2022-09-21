@@ -1,0 +1,15 @@
+sort1 uses: Bubble sort.
+
+How do you know?: The behavior points to an algorithm with best case performance on sorted lists that looks nearly linear. Worst case performance for a revesed list is exponential.
+Bubble sort has these properties since a reversed list requires going through the whole list as many times as there is objects, and moving every almost every object on every pass,
+so n^2 time. On the other hand, a sorted list is only looked at once with no move operations, so n time.
+
+sort2 uses: Merge sort.
+
+How do you know?: The behavior for each type of list is similar, and reflecting logrhithmic growth. This is a feature of merge sort algorithms, where a similar number of steps is
+used no matter what the state of the list is at the start. Time grows slowly as n grows in all cases.
+
+sort3 uses: Selection sort.
+
+How do you know?: Selection sort takes n^2 time, and times are similar across all list conditions. This is because selection sort always searches the unsorted list 1 time for each
+object it sorts, so the time is mostly just linked to the number of objects rather than their positions.

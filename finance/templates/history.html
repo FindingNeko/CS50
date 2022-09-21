@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Transaction Price</th>
+            <th scope="col">Total</th>
+            <th scope="col">Buy/Sell</th>
+            <th scope="col">Time</th>
+    </thead>
+    <tbody>
+    {% for x in trans %}
+        {% if x.sell %}
+            <tr class="table-danger">
+                <th scope="row">{{ x["symbol"] }}</th>
+                <td>{{ x["shares"] }}</td>
+                <td>{{ x["price"] | usd }}</td>
+                <td>{{ -(x["price"] * x["shares"]) | usd }}</td>
+                <td>SELL</td>
+                <td>{{ x["time"] }}</td>
+            </tr>
+        {% else %}
+            <tr class="table-success">
+                <th scope="row">{{ x["symbol"] }}</th>
+                <td>{{ x["shares"] }}</td>
+                <td>{{ x["price"] | usd }}</td>
+                <td>{{ -(x["price"] * x["shares"]) | usd }}</td>
+                <td>BUY</td>
+                <td>{{ x["time"] }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}

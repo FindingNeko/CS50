@@ -1,0 +1,10 @@
+CREATE TABLE transactions
+    (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    price NUMERIC NOT NULL,
+    shares NUMERIC NOT NULL,
+    time DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    );

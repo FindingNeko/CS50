@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+  /* Required for full background image */
+
+  html,
+  body,
+  header,
+  .view {
+    height: 100%;
+  }
+
+  @media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .view {
+      height: 100vh;
+    }
+  }
+
+  .top-nav-collapse {
+    background: transparent !important;
+  }
+
+  .navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+  }
+
+  @media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+  }
+
+  h1 {
+    letter-spacing: 8px;
+  }
+
+  h5 {
+    letter-spacing: 3px;
+  }
+
+  .hr-light {
+    border-top: 3px solid #fff;
+    width: 80px;
+  }
+</style>
+</head>
+
+<body>
+  <!-- Main navigation -->
+  <header>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><strong>MPB</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Explore</a>
+            </li>
+          </ul>
+          <form class="form-inline" action="/explore">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="printid">
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Full Page Intro -->
+    <div class="view jarallax" data-jarallax='{"speed": 5}' style="background-image: url('../static/images/5k2moon.jpg'); min-height: 100vh; background-repeat: no-repeat; background-size: auto; background-position: center center;">
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <!-- Content -->
+        <div class="container">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-md-12 mb-4 white-text text-center">
+              <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>moon pixel base</strong></h1>
+              <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+              <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>let's go to the moon</strong></h5>
+              <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s" href="/create">Create</a>
+              <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s" href="/explore">Explore</a>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Content -->
+      </div>
+      <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+  </header>
+  <!-- Main navigation -->
+  <!--Main Layout-->
+  <!-- Main navigation -->
+  <!--Main Layout-->
+  <main style="background-image: linear-gradient(Black, #303030)">
+    <div class="container" style="background-color: transparent">
+      <!--Grid row-->
+      <div class="row py-5">
+        <!--Grid column-->
+        <div class="col-md-12 text-center">
+          <h3 style="color: #BBBBBB">
+          <p>"The moon is a mystery</p>
+          <p>It's a place we'll never go</p>
+          <p>But we can explore it</p>
+          <p>With our minds and computers</p>
+          <p>We can take it's picture</p>
+          <p>With our cameras and phones</p>
+          <p>and see it's beauty</p>
+          <p>In a million tiny dots"</p>
+          <p>- GPT-3</p>
+          </h3>
+          </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+  </main>
+  <!--Main Layout-->
+
+{% endblock %}
+
+

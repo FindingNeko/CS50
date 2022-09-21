@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Home - Bryan's Home Base</title>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="media/carousel1.png" class="d-block w-100" alt="the carousel">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>This is a carousel.</h5>
+                  <p>It goes round and round.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="media/carousel2.png" class="d-block w-100" alt="goes round">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>The end of the carousel</h5>
+                  <p>can never be found.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="media/carousel3.png" class="d-block w-100" alt="and round">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>An infinite carousel</h5>
+                  <p>it's extent is profound.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <nav class="nav nav-pills nav-fill">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="work.html">Work</a>
+            <a class="nav-link" href="play.html">Play</a>
+            <a class="nav-link" href="else.html">Else</a>
+          </nav>
+          <div class="center">
+            <h1>If I had anything I wanted to share with people, this would be the place.</h1>
+            <h3>My thoughts and ideas could be put into words, and pasted all over this little corner of the internet. Maybe someone would come read it? Maybe not. But with a bit of html, javascript and CSS, I can say whatever I want.</h3>
+            <p>As the letters get smaller, so does my motivation to write something interesting.</p>
+          </div>
+          <div id="liveAlert" class="headspace"> </div>
+          <div class="center">
+            <button type="button" class="btn btn-primary" id="liveAlertBtn">Press this button</button>
+          </div>
+        </div>
+      <script>
+        var alertPlaceholder = document.getElementById('liveAlert')
+        var alertTrigger = document.getElementById('liveAlertBtn')
+
+        function alert(message, type) {
+          var wrapper = document.createElement('div')
+          wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+          alertPlaceholder.append(wrapper)
+        }
+
+        if (alertTrigger) {
+          alertTrigger.addEventListener('click', function () {
+            alert('Wait, no! Not that button!', 'danger')
+          })
+        }
+      </script>
+      <footer>
+        <hr>
+        <div class="footerdiv">
+          <p>If this were copyrighted, the copyright would go here with a little c in a circle and 2022</p>
+          <p class="spaced">MY NAME IS BRYAN</p>
+        </div>
+      </footer>
+    </body>
+</html>
+

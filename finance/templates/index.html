@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>{{ name }}'s Account Balance</h1>
+    <h2>Available Cash {{ cash | usd }}</h2>
+    <h2>Total Value {{ total | usd }}</h2>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Value</th>
+        </thead>
+        <tbody>
+        {% for x in shares %}
+            <tr>
+                <th scope="row">{{ x["symbol"] }}</th>
+                <td>{{ x["SUM(shares)"] }}</td>
+                <td>{{ x["cprice"] | usd }}</td>
+                <td>{{ x["total"] | usd }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

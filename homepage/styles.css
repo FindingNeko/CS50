@@ -1,0 +1,22 @@
+.center
+{
+    text-align: center;
+}
+.headspace
+{
+    margin: 30px;
+}
+.alignleft
+{
+    text-align: left;
+}
+.footerdiv
+{
+    color: LightSlateGrey;
+    text-align: center;
+}
+.spaced
+{
+    letter-spacing: 10px;
+    font-weight: bold;
+}
